@@ -1,0 +1,280 @@
+<style>
+    /* Estilos para la card */
+    .card {
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-center {
+        justify-content: center;
+    }
+
+    .align-items-center {
+        align-items: center;
+    }
+
+    .vh-100 {
+        height: 100vh;
+    }
+
+    .main-heading {
+        font-size: 24px;
+        color: #3d1037;
+    }
+
+    /* Estilos para los botones */
+    .buttonE {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10rem;
+        transition: all 0.02s;
+        font-weight: bold;
+        cursor: pointer;
+        color: #3d1037;
+        z-index: 0;
+        box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .buttonE:hover {
+        background: #380041;
+        color: rgb(255, 255, 255);
+    }
+
+    .buttonE:active {
+        transform: scale(0.97);
+    }
+
+    .hoverEffect {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .hoverEffect div {
+        background: rgb(46, 244, 2);
+        background: linear-gradient(
+            90deg,
+            #5d285e 0%,
+            #380041 49%,
+            #e7dfe7 100%
+        );
+        border-radius: 40rem;
+        width: 10rem;
+        height: 10rem;
+        transition: 0.4s;
+        filter: blur(20px);
+        animation: effect infinite 3s linear;
+        opacity: 0.5;
+    }
+
+    .buttonE:hover .hoverEffect div {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    @keyframes effect {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Estilos para el botón secundario */
+    .buttonC {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10rem;
+        transition: all 0.02s;
+        font-weight: bold;
+        cursor: pointer;
+        color: #3d1037;
+        z-index: 0;
+        box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .buttonC:hover {
+        background: #5d285e;
+        color: #ffffff;
+    }
+
+    .buttonC:active {
+        transform: scale(0.97);
+    }
+
+    .hoverEffect {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .hoverEffect div {
+        background: rgb(130, 222, 0);
+        background: linear-gradient(
+            90deg,
+            #5d285e 0%,
+            #380041 49%,
+            #e7dfe7 100%
+        );
+        border-radius: 20rem;
+        width: 10rem;
+        height: 10rem;
+        transition: 0.4s;
+        filter: blur(20px);
+        animation: effect infinite 3s linear;
+        opacity: 0.5;
+    }
+
+    .buttonC:hover .hoverEffect div {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    @keyframes effect {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card text-center">
+        <h1 class="main-heading">DINOS QUE BUSCAS</h1>
+        <button class="buttonC">
+            Cotización
+            <div class="hoverEffect">
+                <div></div>
+            </div>
+        </button>
+        <p class="text-label">Cotización preliminar:</p>
+        <div>
+            <form class="mt-4">
+                <div class="form-group">
+                    <label for="name">Nombre del usuario:</label>
+                    <input type="text" id="name" class="form-control" placeholder="Escribe tu nombre" required>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="docType">Tipo de documento:</label>
+                    <select id="docType" class="form-control" required>
+                        <option value="" disabled selected>Selecciona el tipo de documento</option>
+                        <option value="certificado">Traduccion de documentos</option>
+                        <option value="contrato">Interpretación de eventos</option>
+                        <option value="manual">Subtitulación</option>
+                        <option value="otros">Traducción de libros</option>
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="initialLanguage">Idioma inicial:</label>
+                    <select id="initialLanguage" class="form-control" required>
+                        <option value="" disabled selected>Selecciona el idioma inicial</option>
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="fr">Francés</option>
+                        <option value="de">Alemán</option>
+                        <option value="it">Chino</option>
+                        <option value="pt">Portugués</option>
+                        <option value="it">Coreano</option>
+                        <option value="ru">otro (a especificar)</option>
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="finalLanguage">Idioma final:</label>
+                    <select id="finalLanguage" class="form-control" required>
+                        <option value="" disabled selected>Selecciona el idioma final</option>
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                        <option value="fr">Francés</option>
+                        <option value="de">Alemán</option>
+                        <option value="ch">Chino</option>
+                        <option value="pt">Portugués</option>
+                        <option value="co">Coreano</option>
+                        <option value="ru">Ruso</option>
+                        <option value="ja">Japonés</option>
+                        <option value="ru">otro (a especificar)</option>
+                    </select>
+                </div>
+                <br>
+                <button class="buttonE">
+                    Enviar
+                    <div class="hoverEffect">
+                        <div></div>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('.buttonE').addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar el envío del formulario por defecto
+        
+        // Obtener valores de los campos del formulario
+        const userName = document.getElementById('name').value.trim();
+        const docType = document.getElementById('docType').value;
+        const initialLanguage = document.getElementById('initialLanguage').value;
+        const finalLanguage = document.getElementById('finalLanguage').value;
+
+        // Validar que los campos no estén vacíos
+        if (!userName || !docType || !initialLanguage || !finalLanguage) {
+            alert('Por favor, completa todos los campos del formulario.');
+            return;
+        }
+
+        // Crear mensaje para WhatsApp
+        const message = `Hola, soy ${userName}. Solicito una cotización de ${docType} desde el idioma ${initialLanguage} al ${finalLanguage}.`;
+
+        // Codificar mensaje para URL
+        const encodedMessage = encodeURIComponent(message);
+
+        // Crear URL de WhatsApp
+   
+const whatsappNumber = "524775916618"; // Número de WhatsApp (incluye el código de país sin el "+")
+const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+console.log("Enlace de WhatsApp:", whatsappURL);
+
+        // Abrir WhatsApp
+        window.open(whatsappURL, '_blank');
+
+
+        
+    });
+</script>
+

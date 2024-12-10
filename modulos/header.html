@@ -1,0 +1,173 @@
+
+    <style>
+        /* Aplicamos la nueva tipografía globalmente */
+
+        /* Estilos generales del header */
+
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding-left: 2em;
+        }
+
+        .logo-container img {
+            height: 50px; /* Reducimos el tamaño del logo */
+            padding: 0;
+        }
+
+        .four-moons-logo {
+            height: 35px; /* Reducimos el tamaño del segundo logo */
+            padding: 0;
+            padding-left: 2rem;
+        }
+
+        /* Estilo para los enlaces de navegación */
+        .nav-container {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-container a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            position: relative; /* Necesario para aplicar el subrayado */
+        }
+
+        /* Subrayado de los enlaces al pasar el cursor */
+        .nav-container a:hover {
+            color:  #b2acb5;
+        }
+
+        .nav-container a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #b2acb5;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-container a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Estilos del menú hamburguesa */
+        .menu-hamburguesa {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-hamburguesa div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 100px;
+                right: 10px;
+                background-color: #5D285E;
+                width: 200px;
+                padding: 10px;
+            }
+
+            .nav-container.active {
+                display: flex;
+            }
+
+            .menu-hamburguesa {
+                display: flex;
+            }
+
+            .nav-container a {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+        }
+
+        /* Updated Footer Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  flex: 1 0 auto; /* Allow main content to grow and push footer down */
+}
+
+.arriba {
+    flex-shrink: 0; /* Prevent footer from shrinking */
+    position: relative; /* Changed from fixed */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #5d285e;
+    padding: 20px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2em;
+    margin-top: -1em; /* Push footer to the bottom */
+  }
+    </style>
+
+
+  
+
+<body>
+    <header class="py-3">
+        <div class="arriba">
+            <div class="logo-container">
+                <img src="../src/Ellipse 2.png" alt="Logo" class="img-fluid me-3" style="padding-right: 1rem;">
+                <img src="../src/Four moons logo white.png" alt="Four Moons Logo" class="img-fluid four-moons-logo">
+            </div>
+            
+            <!-- Contenedor del menú y menú hamburguesa -->
+            <div class="nav-container">
+                <a href="Inicio.html">Inicio</a>
+                <a href="Servicios.html">Servicios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="Nosotros.html">Nosotros</a>
+            </div>
+            
+            <!-- Menú hamburguesa -->
+            <div class="menu-hamburguesa" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Función para mostrar/ocultar el menú en pantallas pequeñas
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-container');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
